@@ -5,7 +5,7 @@ Group members: Ashvir Theeruth , Sigodi	Lutho , Ntsaluba	Abona , Makgaloa	Tsheph
 
 Group mentor: [Insert your group mentor, if you have one (not mandatory)]
 
-Project title: [Insert a title for your project ]
+Project title: Nitro Racing 
 
 Project page: [Insert the GitHub web address of your shared repository]
 
