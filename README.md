@@ -1,7 +1,7 @@
 # Epic-car
-Group name: [Insert your group name ]
+Group name: 
 
-Group members: [Insert group members’ full names]
+Group members: Ashvir Theeruth , Sigodi	Lutho , Ntsaluba	Abona , Makgaloa	Tshephang , Tantsi	Okoyama Nomafaku
 
 Group mentor: [Insert your group mentor, if you have one (not mandatory)]
 
