@@ -7,7 +7,7 @@ Group mentor: [Insert your group mentor, if you have one (not mandatory)]
 
 Project title: Nitro Racing 
 
-Project page: [Insert the GitHub web address of your shared repository]
+Project page: https://github.com/g24m3630/Epic-car
 
 Instructions for use (allowable actions): [Provide DETAILED  instructions on how to run AND interact with your program. If we cannot run it with relative ease, it will NOT be marked! So if it needs to be saved in a specific folder, or needs Internet access, or needs anything beyond simply double clicking the executable, document all that here. This is very IMPORTANT! Also, list all forms of interaction here, so if your program allows the user to press ‘Q’ to exit, or ‘left arrow’ or ‘right arrow’ to do specific things, document that here as well. If we cannot figure out how to interact with your program and nothing is documented, it will NOT be marked!]
 
