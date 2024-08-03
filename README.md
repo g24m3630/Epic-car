@@ -4,7 +4,7 @@ Group name: APOLLO
 
 Group members: Ashvir Theeruth , Sigodi	Lutho , Ntsaluba	Abona , Makgaloa	Tshephang , Tantsi	Okoyama Nomafaku
 
-Group mentor: [Insert your group mentor, if you have one (not mandatory)]
+Group mentor: SINENJABULO GOGWANA
 
 Project title: Nitro Racing 
 
