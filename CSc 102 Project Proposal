@@ -11,8 +11,7 @@ The game we plan to develop is a variation of the previous example which allows 
 
 
 3.	A clear “Problem Statement"
-The aim of this version of Nitro Racing is to have the highest score by avoiding other cars on the 3 lanes of the track.
-
+The aim of Nitro-racing is to obtain a highscore by avoiding incoming cars. The game has a low complexity, although the speed of the players car will increase and a nitro-boost feature will be added. Those features will slightly increase the complexity and depth of the game.
 
 4.	A clear “Approach
 
