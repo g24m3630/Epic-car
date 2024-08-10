@@ -27,6 +27,7 @@ Something tricky about this game is that it is too addictive due to the way it i
 The primary goal in Flappy Bird is to guide a bird through a series of pipes with varying heights. 
 The player aims to navigate through as many pipes as possible without colliding with them. Each successful pass through a set of pipes earns the player points. 
 The game continues infinitely until the player hits a pipe or falls to the ground, leading to the end of the game.
+
 4.	A clear “Approach
 The project aims to implement a flappy bird game in Java with the following milestones:
 The objectives are to create a version of flappy bird using java/android studio as the medium. 
@@ -46,5 +47,7 @@ One way to do this is in the form of ‘storyboards’ with an explanation per f
 
 
 References
+ 
+Stratofortress. (2016). Autodesk Instructables. Retrieved from Java Game Programming Tutorial - Flappy Bird Redux: https://www.instructables.com/Java-Game-Programming-Tutorial-Flappy-Bird-Redux/
 Williams, R. (2014, January 29). The Telelgraph. Retrieved from What is Flappy Bird? The game taking the App Store by storm: https://www.telegraph.co.uk/technology/news/10604366/What-is-Flappy-Bird-The-game-taking-the-App-Store-by-storm.html
 
