@@ -14,6 +14,9 @@ A variation of the game involves multiplayer competition in which two people com
 
 3.	A clear “Problem Statement"
 The game has very simple mechanics-tap to make the bird fly and avoid obstaces.
+The primary goal in Flappy Bird is to guide a bird through a series of pipes with varying gaps placed at different heights. 
+The player aims to navigate through as many pipes as possible without colliding with them. Each successful pass through a set of pipes earns the player one point. 
+The game continues infinitely until the player hits a pipe or falls to the ground, leading to a game over.
 
 4.	A clear “Approach
 
