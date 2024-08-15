@@ -6,7 +6,7 @@ Group members: Ashvir Theeruth , Sigodi	Lutho , Ntsaluba	Abona , Makgaloa	Tsheph
 
 Group mentor: SINENJABULO GOGWANA
 
-Project title: Nitro Racing 
+Project title: FLAPPY BIRD 2.0
 
 Project page: https://github.com/g24m3630/Epic-car
 
