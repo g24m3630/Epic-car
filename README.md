@@ -10,7 +10,7 @@ Project title: FLAPPY BIRD 2.0
 
 Project page: https://github.com/g24m3630/Epic-car
 
-Instructions for use (allowable actions): [Provide DETAILED  instructions on how to run AND interact with your program. If we cannot run it with relative ease, it will NOT be marked! So if it needs to be saved in a specific folder, or needs Internet access, or needs anything beyond simply double clicking the executable, document all that here. This is very IMPORTANT! Also, list all forms of interaction here, so if your program allows the user to press ‘Q’ to exit, or ‘left arrow’ or ‘right arrow’ to do specific things, document that here as well. If we cannot figure out how to interact with your program and nothing is documented, it will NOT be marked!]
+Instructions for use (allowable actions): For Windows devices a player has to tab spacebar to make tye bird flop its wing and fly upwards, howerver if the user stops taping the spacebar key the bird will fall and the game ends. And for mobile phone the player has to tap on the screen to make the bird flop its wings and fly upwards.
 
 Tools used: [List and describe any .NET libraries or external tools that you imported for use in your project]
 
