@@ -8,8 +8,8 @@ import java.util.Random;
 import javax.swing.*;
 
 public class Background extends JPanel implements ActionListener,KeyListener {
-    int height = 750;
-    int width = 1360;
+    int height = 600;
+    int width = 60000;
 
     JFrame frame = new JFrame("Flappy Bird 💕❤️🦜🦜🦜");
     Image Top;
@@ -23,7 +23,6 @@ public class Background extends JPanel implements ActionListener,KeyListener {
     int birdY=height/2;
     int birdwidth = 40;
     int birdheight = 30;
-    //instances for the gold...
     int goldX=20;
     int goldY=30;
     int goldwidth = 40;
@@ -38,7 +37,6 @@ class Gold{
         this.gmge = gmge;
     }
   }
-  ///class for the bird/....
     class Bird{
       int X = birdX;
       int Y = birdY;
@@ -51,8 +49,7 @@ class Gold{
           this.bmge = bmge;
       }
     }
-    //instances for the pipe....
-    int pipeX = width ;
+    int pipeX = width;
     int pipeY = 0;
     int pipewidth = 100;
     int pipeheight = 472;
@@ -68,22 +65,21 @@ class Gold{
 
       }
     }
-
-   private  int speedP=-9;      //speed for the pipe....
-  private  ArrayList<Pipe> pipes; ///list for the pipe...
+    int speedP=-4;
+    ArrayList<Pipe> pipes;
     
-   public static  Bird bird;
-   private  static  Gold gold;
-    public Random rand =new Random();
-    private Timer time;
-   public  boolean gameOver= false;
-   public  Timer pipesTimer;
-   public  int speed = 0; /// speed of the bird...
-    int opp = 1;           ///speed of the bird opposed downwards 
+    Bird bird;
+    Gold gold;
+    Random rand =new Random();
+    Timer time;
+    boolean gameOver= false;
+    Timer pipesTimer;
+    int speed = 0;
+    int opp = 1;
     double score = 0.0;
     Background() {   //constructer 
         setPreferredSize(new Dimension(width,height));
-        setBackground(Color.white);
+        //setBackground(Color.blue);
         setFocusable(true);
         addKeyListener(this);
        Top = new ImageIcon(getClass().getResource("./tube.png")).getImage();
@@ -105,13 +101,12 @@ class Gold{
     
       });
     
-      pipesTimer.start();              
-      time.start();       
+      pipesTimer.start();
+      time.start();
     }
-    ////importing the pipes.....
     public void pipeimport(){
-      int randPipes = (int) ((pipeY - pipeheight/6) - Math.random()*(pipeheight/2));
-      int position= width/6;
+      int randPipes = (int) ((pipeY - pipeheight/4) - Math.random()*(pipeheight/2));
+      int position= width/4;
       Pipe toppipe=new Pipe(Top);
       toppipe.Yp= randPipes;
       pipes.add(toppipe);
@@ -120,13 +115,11 @@ class Gold{
       pipes.add(bottompipes); 
 
     }
-
    public void paintComponent(Graphics g){
         super.paintComponent(g);
        draw(g);
       
     }
-    ///tracking motion...
     public void acc(){
       speed +=opp;
       bird.Y +=speed;
@@ -141,55 +134,44 @@ class Gold{
           score += 0.5;
 
         }
-        if(Intersection(bird,pipe)){
-          gameOver = true ;
-        }
-      
+      }
       if(bird.Y> width){
         gameOver=true;
-      
-      
-    }
-    }
-    }
-   public boolean Intersection(Bird flop, Pipe pip) {
-      return flop.X < pip.Xp + pip.Pwidth &&   //flop's top left corner doesn't reach pip's top right corner
-             flop.X + flop.bwidth > pip.Xp &&   //flop's top right corner passes pip's top left corner
-             flop.Y < pip.Yp + pip.Pheight &&  //flop's top left corner doesn't reach pip's bottom left corner
-             flop.Y + flop.bheight > pip.Yp;
+      }
     }
     public void draw(Graphics g){
-      g.drawImage(bot, 0, 0, width , height, null);
+      g.drawImage(bot, 0, 0, width, height, null);
 
       g.drawImage(bird.bmge, bird.X, bird.Y, bird.bwidth, bird.bheight, null);
+     // g.drawImage(gold.gmge, gold.Xg, gold.Yg, gold.gwidth, gold.gheight, null);
       int i =0; 
     while(i< pipes.size()){
       Pipe pipe = pipes.get(i);
-      g.drawImage(pipe.pimg, pipe.Xp, pipe.Yp, pipe.Pwidth, pipe.Pheight, null);
-      i++;
+      
+    
+    g.drawImage(pipe.pimg, pipe.Xp, pipe.Yp, pipe.Pwidth, pipe.Pheight, null);
+    i++;
     }
-
     g.setColor(Color.darkGray );
     g.setFont(new Font("Arial",Font.PLAIN, 32));
-
     if(gameOver){
-     g.drawImage(ice, 0, 0, width, height, null);
+     // g.drawImage(ice, 0, 0, width, height, null);
       pipesTimer.stop();
       time.stop();
       g.drawString("  SCORE : "+String.valueOf((int) score) , 100 , 300);
          g.drawString("  CLICK TO START ", 100 , 350);
+         g.drawString("  GAMEOVER!!! ", 100 , 250);
          
     }
     else{
       g.drawString("  SCORE : "+String.valueOf((int) score) , 10, 30);
     }
     if(score >=10){
-      speedP =-13;
+      speedP =-10;
       score +=0.01;
     }
     if(score >=10){
       g.drawImage(gold.gmge, gold.Xg, gold.Yg, gold.gwidth, gold.gheight, null);
-  
     }
     if(score >=100){
       g.drawImage(gold.gmge, gold.Xg + 40, gold.Yg  , gold.gwidth, gold.gheight, null);
@@ -214,7 +196,7 @@ class Gold{
 	}
 	@Override
 	public void keyTyped(KeyEvent e) {
-		/////////////////////////////////
+		
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -234,6 +216,6 @@ class Gold{
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
-		///////////////////////////
+		
 	}
 }
