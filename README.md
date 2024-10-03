@@ -22,9 +22,9 @@ Tools used:
 
 	“java.awt.event” – Provides the necessary clauses and interfaces for event handling. 
 The classes used: 
--ActionEvent: indicates that a component – defined action has 			        	occurred.
-- ActionListener: Adds interactivity in java applications by handling 			user actions. 
-- KeyListener: allows program to respond to user input from the users 			keyboard.
+-ActionEvent: indicates that a component – defined action has occurred.
+- ActionListener: Adds interactivity in java applications by handling user actions. 
+- KeyListener: allows program to respond to user input from the users keyboard.
 - KeyEvent: encapsulates information about the key event.
 
 	“javax.swing” – provides lightweight components that are used to create window-based applications. 
