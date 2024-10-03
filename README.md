@@ -1,10 +1,17 @@
 #fLOPPY Bird
+
 Group name: APOLLO
+
 Group members: Sigodi Lutho , Ntsaluba Abona , Makgaloa Tshephang , Tantsi Okoyama Nomafaku
+
 Group mentor: SINENJABULO GOGWANA
+
 Project title: FLAPPY BIRD 2.0
+
 Project page: https://github.com/g24m3630/Epic-car
+
 Instructions for use (allowable actions): For Windows devices a player has to tab spacebar to make the bird flop its wing and fly upwards, however if the user stops taping the spacebar key the bird will fall and the game ends. And for mobile phone the player has to tap on the screen to make the bird flop its wings and fly upwards. 
+
 Tools used:
 	“java.awt”  – This contains the classes for creating user interface as well as painting graphics and images.
  The classes used for this game are: 
