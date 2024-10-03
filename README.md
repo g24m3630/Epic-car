@@ -1,4 +1,4 @@
-#fLOPPY Bird
+fLOPPY Bird 2.0
 
 Group name: APOLLO
 
@@ -32,7 +32,8 @@ Classes used:
 -	JFrame: represents a top level window with a title border.
 -	JButton: implements events when clicked.
 -	JPanel: hold and organises other components. 
--	Timer: implements action events in intervals to assist in repetitive tasks. 
+-	Timer: implements action events in intervals to assist in repetitive tasks.
+  
 	“java.util” – provides the collections framework, random number generations  and other utility classes.
 Classes used:
 -	Random: generates random numbers assisting in the random generation of the pipes in the game.
