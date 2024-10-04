@@ -8,8 +8,8 @@ import java.util.Random;
 import javax.swing.*;
 
 public class Background extends JPanel implements ActionListener,KeyListener {
-    int height = 750;
-    int width = 1260;
+    int height = 700;
+    int width = 1360;
 
     JFrame frame = new JFrame("Flappy Bird 💕❤️🦜🦜🦜");
     Image Top;
@@ -21,11 +21,7 @@ public class Background extends JPanel implements ActionListener,KeyListener {
     Image bronzes;
     Image silvers;
     Image platinums ;
-    //instances for the bird...
-    int birdX=width/6;
-    int birdY=height/2;
-    int birdwidth = 40;
-    int birdheight = 30;
+  
     //instances for the bronze..
     int bronzeX=70;
     int bronzeY=30;
@@ -93,6 +89,11 @@ class Gold{
     }
   }
   ///class for the bird/....
+    //instances for the bird...
+    int birdX=width/6;
+    int birdY=height/2;
+    int birdwidth = 40;
+    int birdheight = 30;
     class Bird{
       int X = birdX;
       int Y = birdY;
@@ -161,12 +162,13 @@ class Gold{
       time = new Timer(1000/60,this);
       pipes = new ArrayList<>();
 
-      pipesTimer = new Timer(1500,new ActionListener() {
+      pipesTimer = new Timer(1600,new ActionListener() {
         @Override
         
 	public void actionPerformed(ActionEvent e){
       pipeimport();
       repaint();
+
   } 
     
       });
@@ -177,7 +179,7 @@ class Gold{
     ////importing the pipes.....
     public void pipeimport(){
       int randPipes = (int) ((pipeY - pipeheight/6) - Math.random()*(pipeheight/2));
-      int position= width/6;
+      int position= width/8;
       Pipe toppipe=new Pipe(Top);
       toppipe.Yp= randPipes;
       pipes.add(toppipe);
@@ -251,11 +253,13 @@ class Gold{
     }
     else{
       g.drawString("  Score : "+String.valueOf((int) score) , 10, 30);
+      g.setFont(new Font("Arial",Font.PLAIN, 22));
       g.drawString("  P--> PAUSE   " , 10, 100);
+      g.drawString("  R--> RESUME   " , 10, 150);
     }
-    if(score >=10){
-      speedP =-13;
-     // score +=0.01;
+    if(score >=5){
+      speedP =-20;
+     score +=0.01;
     }
     if(score >=10){
       g.drawImage(bronze.zmge, bronze.Xb - 40 , bronze.Yb, bronze.bswidth, bronze.bsheight, null);
@@ -289,14 +293,16 @@ class Gold{
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
-    if(e.getKeyCode()== KeyEvent.VK_BACK_SLASH){
+    if(e.getKeyCode()== KeyEvent.VK_P){
       pipesTimer.stop();
       time.stop();
     }
-    if(e.getKeyCode()== KeyEvent.VK_0){
+    if(e.getKeyCode()== KeyEvent.VK_R){
       pipesTimer.start();
       time.start();
+      
     }
+    
 	if(e.getKeyCode() == KeyEvent.VK_SPACE){
     speed = -9;
   }	

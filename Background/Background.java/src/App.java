@@ -1,40 +1,53 @@
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Color;
-import java.awt.Dimension;
-
 import javax.swing.*;
 public class App extends JPanel {
-    JFrame frame = new JFrame("FLAPPY BIRD 💕❤️🦜🦜🦜");
+    JFrame frame1 = new JFrame("FLAPPY BIRD 💕❤️🦜🦜🦜");
     JButton button;
+    JPanel pan;
+    JLabel lab;
+    Container con;
+    Font tite=new Font("Times New Roman",Font.PLAIN,98);
     App(){
        
         button  = new JButton();
-        button.setBounds(220,230,140,80);
-        button.setText("PLAY");
-      
-      
-        frame.setSize(900,900);  
-        frame.setVisible(true); 
-        //frame.setVisible(true);
-        frame.add(button);
-        frame.setLayout(null);
-        frame.setResizable(false);
 
-        
+        button.setBounds(600,290,130,80);
+        button.setText("PLAY");
+        frame1.getContentPane().setBackground(Color.cyan);
+        button.setBackground(Color.LIGHT_GRAY);
+        frame1.setSize(1360,850);  
+        frame1.setVisible(true); 
+        frame1.add(button);
+        frame1.setLayout(null);
+        frame1.setResizable(false);
+        con=frame1.getContentPane();
+        lab = new JLabel("        FLAPPY BIRD");
+        pan = new JPanel();
+        pan.setBounds(100, 100, 900, 150);
+        pan.setBackground(Color.cyan);
+        lab.setBackground(Color.white);
+        lab.setFont(tite);
+        pan.add(lab);
+        con.add(pan);
         Title title = new Title();
         button.addActionListener(title);
     }
     public static void main(String[] args) throws Exception {
         new App();
     }
-    public void Gamescreen(){
+    public void Gamescreen() {
         JFrame frame = new JFrame("FLAPPY BIRD 💕❤️🦜🦜🦜");
         button.setVisible(false);
-
+        frame1.setVisible(false);
+        pan.setVisible(false);
+        lab.setVisible(false);
         Background background= new Background();
        frame.add(background);  
-       frame.setSize(600,600);  
+       frame.setSize(600,600);    
        frame.setVisible(true); 
         frame.add(background); 
         frame.pack();
