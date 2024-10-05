@@ -8,10 +8,11 @@ import java.util.Random;
 import javax.swing.*;
 
 public class Background extends JPanel implements ActionListener,KeyListener {
-    int height = 700;
-    int width = 1360;
+    int height = 700;     //The height of the game 
+    int width = 1360;   ///The width of the game 
 
-    JFrame frame = new JFrame("Flappy Bird 💕❤️🦜🦜🦜");
+    JFrame frame = new JFrame("Flappy Bird 💕❤️🦜🦜🦜");    
+    //Variables for Images all public ...
     Image Top;
     Image mid ;
     Image birds;
@@ -21,79 +22,87 @@ public class Background extends JPanel implements ActionListener,KeyListener {
     Image bronzes;
     Image silvers;
     Image platinums ;
-  
-    //instances for the bronze..
+    /////////////////////////////////////////////////////////////////////////
+    //instances for the bronze all public..
     int bronzeX=70;
     int bronzeY=30;
     int bronzewidth = 40;
     int bronzeheight = 30;
+    //a Class for Bronze 
     class Bronze{
       int Xb = bronzeX;
       int Yb = bronzeY;
       int bswidth = bronzewidth;
       int bsheight = bronzeheight;
       Image zmge;
+      //A constructor for Bronze public..
       Bronze(Image zmge){
         this.zmge = zmge;
     }
   }
-  //Instances for the Silver
+  //////////////////////////////////////////////////////////////////////////////
+  //Instances for the Silver all public 
   int silverX=20;
   int silverY=30;
   int silverwidth = 40;
   int silverheight = 30;
- 
+//Class for Silver 
 class Silver{
     int Xs = silverX;
     int Ys = silverY;
     int swidth = silverwidth;
     int sheight = silverheight;
     Image smge;
+    //A constructor for Silver it is public
     Silver(Image smge){
       this.smge = smge;
   }
 }
-  //Instances for the Platinum
+////////////////////////////////////////////////////////////////////////////////
+  //Instances for the Platinum all Public 
   int platinumX=20;
   int platinumY=30;
   int platinumwidth = 40;
   int platinumheight = 30;
- 
+ //A class for Platinum..
 class Platinum{
     int Xm = platinumX;
     int Ym = platinumY;
     int mwidth = platinumwidth;
     int mheight = platinumheight;
     Image pmge;
+    //A constructor for Platinum it is public ..
     Platinum(Image pmge){
       this.pmge = pmge;
   }
 }
 
-
-    //instances for the gold...
+//////////////////////////////////////////////////////////////////////
+    //instances for the gold all public ...
 
     int goldX=20;
     int goldY=30;
     int goldwidth = 40;
     int goldheight = 30;
-   
+   //A class for gold ..
 class Gold{
       int Xg = goldX;
       int Yg = goldY;
       int gwidth = goldwidth;
       int gheight = goldheight;
       Image gmge;
+      //A constructor for gold it is public..
       Gold(Image gmge){
         this.gmge = gmge;
     }
   }
-  ///class for the bird/....
+  ///////////////////////////////////////////////////////////////////
     //instances for the bird...
     int birdX=width/6;
     int birdY=height/2;
     int birdwidth = 40;
     int birdheight = 30;
+    //A class for The bird...
     class Bird{
       int X = birdX;
       int Y = birdY;
@@ -101,23 +110,26 @@ class Gold{
       int bheight = birdheight;
       Image bmge;
    
-  
+  //The constructor for Bird it is public ..
       Bird(Image bmge){
           this.bmge = bmge;
       }
     }
+    //////////////////////////////////////////////////////////
     //instances for the pipe....
     int pipeX = width ;
     int pipeY = 0;
     int pipewidth = 100;
     int pipeheight = 472;
+    //A class for Pipes ..
     class Pipe{
       int Xp = pipeX;
       int Yp= pipeY;
       int Pwidth = pipewidth;
       int Pheight = pipeheight;
       Image pimg;
-      boolean succ = false;
+      boolean succ = false; ///checking a succeful pipe passed..
+      //THe constructor for Pipes...
       Pipe(Image pimg){
         this.pimg=pimg;
 
@@ -126,25 +138,32 @@ class Gold{
 
    private  int speedP=-9;      //speed for the pipe....
   private  ArrayList<Pipe> pipes; ///list for the pipe...
-    
-  public static  Platinum platinum; 
-  public static  Silver silver;
-  public static  Bird bird;
-   private  static  Gold gold;
-   private  static  Bronze bronze;
+  ///////////////////////////////////////////////////
+  ///THIS ARE OBJECTS....
+  public static  Platinum platinum;   //An object for platinum..
+  public static  Silver silver;      // An object for silver..
+  public static  Bird bird;        //an object for bird..
+   private  static  Gold gold;     //an object for gold..
+   private  static  Bronze bronze;  // an object for bronze..
+   ////////////////////////////////////////////////
     public Random rand =new Random();
     private Timer time;
    public  boolean gameOver= false;
    public  Timer pipesTimer;
    public  int speed = 0; /// speed of the bird...
     int opp = 1;           ///speed of the bird opposed downwards 
+
     double score = 0.0;
+
     int timerScore;
+    //////////////////////////////////////////////////////
+    //A constructor for Background Class
     Background() {   //constructer 
-        setPreferredSize(new Dimension(width,height));
-        setBackground(Color.pink);
+        setPreferredSize(new Dimension(width,height));  ////making the size of the game...
         setFocusable(true);
-        addKeyListener(this);
+        addKeyListener(this); ////ADDDING A KEY FOR THE CLASS CALLED BACKGROUND CLASS 
+        /////////////////////////////////////////////////////////////////////////
+        ///Initializing and import the images from the specific files....
        Top = new ImageIcon(getClass().getResource("./tube.png")).getImage();
         mid = new ImageIcon(getClass().getResource("./tube2.png")).getImage();
         birds = new ImageIcon(getClass().getResource("./bird.png")).getImage();
@@ -154,26 +173,31 @@ class Gold{
         bronzes = new ImageIcon(getClass().getResource("./bronze.png")).getImage();
         silvers = new ImageIcon(getClass().getResource("./Silver.png")).getImage();
         platinums = new ImageIcon(getClass().getResource("./Platinum.png")).getImage();
+        ///////////////////////////////////////////////////////
+        //Initializing the Objects...
         platinum = new Platinum(platinums);
         silver = new Silver(silvers);
         bird = new Bird(birds);
         gold=new Gold(golds);
         bronze=new Bronze(bronzes);
-      time = new Timer(1000/60,this);
-      pipes = new ArrayList<>();
+      /////////////////////////////////////////////
+      pipes = new ArrayList<>(); ///an array list for pipes....
 
+      ///This are timers for timing the pipes and the game itself....
+      time = new Timer(1000/60,this);
       pipesTimer = new Timer(1600,new ActionListener() {
-        @Override
-        
-	public void actionPerformed(ActionEvent e){
-      pipeimport();
-      repaint();
+      @Override
+      ////////////////////////////
+      //An action listener for the pipe timer...
+      public void actionPerformed(ActionEvent e){
+      pipeimport(); //////calling the import method everytime an action is performed....
+      repaint();  ///painting everytime an action is performed...
 
   } 
     
       });
     
-      pipesTimer.start(); 
+      pipesTimer.start();  
       time.start();       
     }
     ////importing the pipes.....
@@ -257,7 +281,7 @@ class Gold{
       g.drawString("  P--> PAUSE   " , 10, 100);
       g.drawString("  R--> RESUME   " , 10, 150);
     }
-    if(score >=5){
+    if(score >=10){
       speedP =-20;
      score +=0.01;
     }
@@ -310,6 +334,7 @@ class Gold{
   if(gameOver){
     bird.Y=birdY;
     pipes.clear();
+    speedP=-11 ;
     speed = 0;
     score = 0;
     gameOver = false;
