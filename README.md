@@ -1,4 +1,4 @@
-fLOPPY Bird 2.0
+fLAPPY Bird 2.0
 
 Group name: APOLLO
 
