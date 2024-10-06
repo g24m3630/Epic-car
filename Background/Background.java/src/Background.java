@@ -280,6 +280,7 @@ class Gold{
       g.setFont(new Font("Arial",Font.PLAIN, 22));
       g.drawString("  P--> PAUSE   " , 10, 100);
       g.drawString("  R--> RESUME   " , 10, 150);
+      g.drawString("  S--> RESTART   " , 10, 200);
     }
     if(score >=10){
       speedP =-20;
@@ -326,7 +327,16 @@ class Gold{
       time.start();
       
     }
-    
+    if(e.getKeyCode() == KeyEvent.VK_S){
+      bird.Y=birdY;
+      pipes.clear();
+      speedP=-11 ;
+      speed = 0;
+      score = 0;
+      gameOver = false;
+      pipesTimer.start();
+      time.start();
+    }
 	if(e.getKeyCode() == KeyEvent.VK_SPACE){
     speed = -9;
   }	
