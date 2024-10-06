@@ -35,6 +35,7 @@ public class App extends JPanel {
         con.add(pan);
         Title title = new Title();
         button.addActionListener(title);
+        Musico.Run("Samplegame music.wav");
     }
     public static void main(String[] args) throws Exception {
         new App();
