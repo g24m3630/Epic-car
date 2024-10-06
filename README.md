@@ -56,6 +56,6 @@ Concepts used:
 Assumptions: [State ANY assumptions about how you expect the system will be used or run]
 
 
-Limitations: The game does not include a save/load system or a way to store high scores or game progress between sessions. The program is developed for desktop systems and does not have mobile or tablet support.The game cannot be restarted until after the player has lost the current game. 
+Limitations: The game does not include a save/load system or a way to store high scores or game progress between sessions. The program is developed for desktop systems and does not have mobile or tablet support.
 
 
