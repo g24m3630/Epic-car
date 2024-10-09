@@ -35,7 +35,7 @@ public class App extends JPanel {
         con.add(pan);
         Title title = new Title();
         button.addActionListener(title);
-        Musico.Run("Samplegame music.wav");
+       
     }
     public static void main(String[] args) throws Exception {
         new App();
@@ -55,6 +55,8 @@ public class App extends JPanel {
         background.requestFocus();
        frame.setVisible(true);
        frame.setResizable(false);
+        Musico.Run("Samplegame music.wav");
+       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
      
     }
 
