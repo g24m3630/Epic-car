@@ -6,8 +6,8 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-public class Sound {
-    public static void Runmusic(String path) throws LineUnavailableException{
+public class Musico {
+    public static void Run(String path) throws LineUnavailableException{
         try {
             AudioInputStream input=AudioSystem.getAudioInputStream(new File(path));
             Clip clip=AudioSystem.getClip();
