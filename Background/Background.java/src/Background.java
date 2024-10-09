@@ -229,7 +229,7 @@ class Gold{
         Pipe pipe= pipes.get(i);
         pipe.Xp += speedP;
         i++;
-        if(!pipe.succ && bird.X > pipe.Yp + pipewidth ){
+        if(!pipe.succ && bird.X > pipe.Xp + pipewidth ){
           pipe.succ = true;
           score += 0.5;
          timerScore = (int)score*3;
