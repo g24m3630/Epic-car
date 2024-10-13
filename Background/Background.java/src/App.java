@@ -3,6 +3,7 @@ import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.sound.sampled.LineUnavailableException;
 import javax.swing.*;
 public class App extends JPanel {
     JFrame frame1 = new JFrame("FLAPPY BIRD 💕❤️🦜🦜🦜");
@@ -11,7 +12,7 @@ public class App extends JPanel {
     JLabel lab;
     Container con;
     Font tite=new Font("Times New Roman",Font.PLAIN,98);
-    App(){
+    App() throws LineUnavailableException{
        
         button  = new JButton();
 
@@ -35,12 +36,12 @@ public class App extends JPanel {
         con.add(pan);
         Title title = new Title();
         button.addActionListener(title);
-       
+        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     public static void main(String[] args) throws Exception {
         new App();
     }
-    public void Gamescreen() {
+    public void Gamescreen() throws LineUnavailableException {
         JFrame frame = new JFrame("FLAPPY BIRD 💕❤️🦜🦜🦜");
         button.setVisible(false);
         frame1.setVisible(false);
@@ -56,16 +57,18 @@ public class App extends JPanel {
        frame.setVisible(true);
        frame.setResizable(false);
         Musico.Run("Samplegame music.wav");
-       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-     
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
    public class Title implements ActionListener{
         public void actionPerformed(ActionEvent event){
-            Gamescreen();
+            try {
+                Gamescreen();
+            } catch (LineUnavailableException ex) {
+            }
 
         }
 
     }
 }
-  
+ 
